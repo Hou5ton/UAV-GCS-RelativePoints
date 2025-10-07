@@ -1,0 +1,9 @@
+{
+    "Keys": ["sxf"],
+    "Provider": "SXF",
+    "Version": 102,
+    "Experimental": false,
+    "Features": [        
+        "OfflineMappingFeature"
+    ]
+}

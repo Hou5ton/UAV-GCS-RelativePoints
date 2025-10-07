@@ -1,0 +1,72 @@
+- name: stab
+  title: Stability controls
+  units: -1..+1
+  content:
+    - name: ail
+      title: Ailerons
+    - name: elv
+      title: Elevator
+    - name: rud
+      title: Rudder
+    - name: col
+      title: Collective
+
+- name: eng
+  title: Engine controls
+  content:
+    - name: thr
+      title: Throttle
+      units: 0..1
+    - name: prop
+      title: Prop pitch
+      units: -1..+1
+    - name: choke
+      title: Choke
+      units: 0..1
+    - name: tune
+      title: Engine tuning
+      units: -1..+1
+    - name: tvec
+      title: Thrust vector
+      units: -1..+1
+    - name: rev
+      title: Thrust reverse
+      type: enum
+      units:
+        - "off"
+        - "on"
+
+- name: wing
+  title: Wing mechanization
+  content:
+    - name: flaps
+      title: Flaps
+      units: 0..1
+    - name: airbrk
+      title: Airbrakes
+      units: 0..1
+    - name: slats
+      title: Slats
+      units: 0..1
+    - name: sweep
+      title: Sweep
+      units: -1..+1
+    - name: buo
+      title: Buoyancy
+      units: -1..+1
+
+- name: str
+  title: Steering controls
+  content:
+    - name: brake
+      title: Brake
+      units: 0..1
+    - name: gear
+      title: Landing gear
+      type: enum
+      units:
+        - down
+        - retract
+    - name: rud
+      title: Steering
+      units: -1..+1

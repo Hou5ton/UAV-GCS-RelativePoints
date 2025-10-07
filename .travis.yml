@@ -1,0 +1,113 @@
+language: cpp
+sudo: required
+python: 2.7
+# if: branch = release
+if: false
+git:
+  depth: 1000
+env:
+  global:
+  - QT_DIR=$HOME/Qt
+  - GCC_ARM_DIR=$HOME/gcc
+  - CACHE_DIR=$HOME/build_cache
+  # SPARKLE_KEY
+  - secure: ""
+  # GITHUB_TOKEN
+  - secure: ""
+  - GPG_K=$encrypted_61d802d6f995_key
+  - GPG_I=$encrypted_61d802d6f995_iv
+  # MJ_APIKEY_PUBLIC
+  - secure: ""
+  # MJ_APIKEY_PRIVATE
+  - secure: ""
+cache:
+  timeout: 3000
+  directories:
+  - "$QT_DIR"
+  - "$CACHE_DIR"
+  - "$GCC_ARM_DIR"
+
+jobs:
+  include:
+  - stage: build
+    os: osx
+    osx_image: xcode10.2
+    install:
+    - make install-tools-osx
+    - pip uninstall requests -y
+    - pip install -U requests[security]
+    - make install-tools-python
+    script:
+    - make gcs
+    - make fw
+    before_deploy:
+    - make install-keychain-sparkle
+    deploy:
+      on:
+        branch: release
+      skip_cleanup: true
+      provider: script
+      script: make deploy
+
+  - stage: build
+    os: linux
+    dist: bionic
+    compiler: gcc-8
+    addons:
+      apt:
+        update: true
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - g++-8
+        - g++-8-multilib
+        - libgstreamer1.0-dev
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - gstreamer1.0-tools
+        - gstreamer1.0-x
+        - gstreamer1.0-gl
+        - gstreamer1.0-libav
+        - gstreamer1.0-pulseaudio
+        - libgstreamer-plugins-base1.0-dev
+        - libsdl2-dev
+        - libegl1-mesa-dev
+        - libgles2-mesa-dev
+        - libxkbcommon-x11-dev
+        - libspeechd-dev
+        - libffi-dev
+    install:
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 50
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 50
+    - pushd /usr/include; sudo ln -s asm-generic/ asm; popd
+    #- sudo pip uninstall requests -y
+    - sudo make install-tools-python
+    #- sudo pip install -U requests[security]
+    - make install-tools-linux
+    script:
+    - make gcs
+    deploy:
+      on:
+        branch: release
+      skip_cleanup: true
+      provider: script
+      script: make deploy
+
+  - stage: publish
+    os: osx
+    osx_image: xcode10.2
+    if: branch = release
+    install:
+    - pip uninstall requests -y
+    - pip install -U requests[security]
+    - make install-tools-python
+    - make install-keychain-git
+    script:
+    - make publish
+
+notifications:
+  email:
+    on_success: never
+  slack:
+    secure: ""

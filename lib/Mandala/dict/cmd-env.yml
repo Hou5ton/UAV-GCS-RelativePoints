@@ -1,0 +1,104 @@
+- name: dict
+  title: Dictionary Management
+  content:
+    - name: search
+      title: Search for dict source
+    - name: ident
+      title: Dictionary identifier
+      descr: <hash><node_uid>
+
+- name: vehicle
+  title: Vehicle addressed data
+  content:
+    - name: ident
+      title: Vehicle Identification
+      descr: <ident data>
+    - name: xpdr
+      title: Transponder data from vehicle
+      descr: <squawk><xpdr data>
+    - name: downlink
+      title: Data packet from vehicle
+      descr: <squawk><uid><data...>
+    - name: uplink
+      title: Data packet from GCS to vehicle
+      descr: <squawk><uid><data...>
+
+- name: telemetry
+  title: Telemetry packed stream
+  content:
+    - name: format
+      title: Telemetry data format feed
+      descr: <packing format feed...>
+    - name: data
+      title: Telemetry data stream
+      descr: <format_mn><time><packed data...>
+    - name: stream
+      title: Telemetry stream request/select
+    - name: request
+      title: Specific uid request
+      descr: <uid><period_ms>[<format>]
+
+- name: mission
+  title: Mission data
+  content:
+    - name: info
+      title: Mission information
+    - name: data
+      title: Mission data
+
+- name: vcp
+  title: Virtual comm port data
+  content:
+    - name: rx
+      title: Received VCP serial data
+      descr: <port_id><data...>
+    - name: tx
+      title: Transmit VCP serial data
+      descr: <port_id><data...>
+    - name: can
+      title: Auxilary CAN port message
+      descr: <port_id><ID32 b31=IDE><data...>
+
+- name: redundancy
+  title: Redundancy management
+  content:
+    - name: active
+      title: Autopilot active flag
+
+- name: stream
+  title: Special streams and wrappers
+  content:
+    - name: local
+      title: Local data no uplink
+      descr: <local><uid><data>
+    - name: payload
+      title: Payload data
+      descr: <payload><uid><data>
+
+    - name: hid
+      title: Human interface
+      descr: <hid><uid><data>
+    - name: video
+      title: Video data
+
+- name: script
+  title: Scripting commands
+  content:
+    - name: vmexec
+      title: Execute VM script onboard
+      descr: <@function>
+    - name: jsexec
+      title: Execute JS script on GCS
+      descr: <script text>
+
+- name: formation
+  title: Formation data
+  content:
+    - name: haps
+      title: HAPS shared data
+    - name: left
+      title: Left wing data
+    - name: right
+      title: Right wing data
+    - name: center
+      title: Center wing data

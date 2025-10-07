@@ -1,0 +1,20 @@
+module Apx.Controls
+depends Apx.Common 1.0
+
+Status            1.0 status/Status.qml
+NodesState        1.0 status/NodesState.qml
+
+MissionListView   1.0 main/MissionListView.qml
+MissionTools      1.0 main/MissionTools.qml
+VehiclesListView  1.0 main/VehiclesListView.qml
+TaskBar           1.0 main/TaskBar.qml
+TelemetryReader   1.0 main/TelemetryReader.qml
+WidgetsListView   1.0 main/WidgetsListView.qml
+WarningMessage    1.0 main/WarningMessage.qml
+
+NumbersBox        1.0 numbers/NumbersBox.qml
+NumbersBar        1.0 numbers/NumbersBar.qml
+NumbersMenu       1.0 numbers/NumbersMenu.qml
+
+Commands          1.0 commands/Commands.qml
+

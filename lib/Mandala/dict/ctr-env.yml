@@ -1,0 +1,221 @@
+- name: pwr
+  title: Power
+  type: enum
+  units:
+    - "off"
+    - "on"
+  content:
+    - name: ap
+      suffix: Avionics
+    - name: servo
+      suffix: servo
+    - name: ignition
+      suffix: Ignition
+    - name: payload
+      suffix: Payload
+    - name: agl
+      suffix: AGL sensor
+    - name: xpdr
+      suffix: XPDR
+    - name: satcom
+      suffix: Satcom
+    - name: rfamp
+      suffix: RF amplifier
+    - name: ils
+      suffix: ILS
+    - name: ice
+      suffix: Anti-ice
+
+- name: sw
+  title: Switches
+  type: enum
+  units:
+    - "off"
+    - "on"
+  content:
+    - name: starter
+      title: Engine starter
+    - name: horn
+      title: Engine horn signal
+    - name: ign1
+      title: Ignition 1
+    - name: ign2
+      title: Ignition 2
+    - name: fpump
+      title: Fuel pump
+    - name: xfeed
+      title: Fuel crossfeed
+
+- name: ers
+  title: Emergency Recovery System
+  type: enum
+  content:
+    - name: launch
+      title: ERS launch
+      units:
+        - "off"
+        - "on"
+    - name: rel
+      title: ERS release
+      units:
+        - locked
+        - released
+
+- name: light
+  title: Lighting
+  type: enum
+  units:
+    - "off"
+    - "on"
+  content:
+    - name: beacon
+      title: Beacon light
+    - name: landing
+      title: Landing lights
+    - name: nav
+      title: Navigation lights
+    - name: strobe
+      title: Strobe lights
+    - name: taxi
+      title: Taxi lights
+
+- name: door
+  title: Doors and latches
+  type: enum
+  units:
+    - "locked"
+    - "open"
+  content:
+    - name: main
+      title: Main door
+    - name: drop
+      title: Drop-off
+
+- name: cam
+  title: Camera
+  content:
+    - name: roll
+      suffix: ctr roll
+      units: -1..+1
+    - name: pitch
+      suffix: ctr pitch
+      units: -1..+1
+    - name: yaw
+      suffix: ctr yaw
+      units: -1..+1
+
+    - name: rec
+      suffix: record
+      type: enum
+      units:
+        - "off"
+        - "on"
+    - name: shot
+      suffix: shot
+      type: enum
+      units:
+        - "off"
+        - "single"
+        - "series"
+    - name: arm
+      suffix: arm focus
+      type: enum
+      units:
+        - "off"
+        - "on"
+    - name: zin
+      suffix: zoom in
+      type: enum
+      units:
+        - "off"
+        - "on"
+    - name: zout
+      suffix: zoom out
+      type: enum
+      units:
+        - "off"
+        - "on"
+    - name: aux
+      suffix: auxilary control
+      type: byte
+
+- name: ats
+  title: ATS controls output
+  content:
+    - name: roll
+      title: ATS ctr roll
+      units: -1..+1
+    - name: pitch
+      title: ATS ctr pitch
+      units: -1..+1
+    - name: yaw
+      title: ATS ctr yaw
+      units: -1..+1
+
+- name: turret
+  title: Turret controls output
+  content:
+    - name: roll
+      title: Turret ctr roll
+      units: -1..+1
+    - name: pitch
+      title: Turret ctr pitch
+      units: -1..+1
+    - name: yaw
+      title: Turret ctr yaw
+      units: -1..+1
+
+    - name: mode
+      title: Turret
+      type: enum
+      units:
+        - "off"
+        - "arm"
+        - "shoot"
+        - "shooting"
+        - "reload"
+
+- name: usr
+  title: User controls
+  content:
+    - name: u1
+      title: User ctr 1
+    - name: u2
+      title: User ctr 2
+    - name: u3
+      title: User ctr 3
+    - name: u4
+      title: User ctr 4
+    - name: u5
+      title: User ctr 5
+    - name: u6
+      title: User ctr 6
+    - name: u7
+      title: User ctr 7
+    - name: u8
+      title: User ctr 8
+
+    - name: ub1
+      type: byte
+      title: User ctr byte 1
+    - name: ub2
+      type: byte
+      title: User ctr byte 2
+    - name: ub3
+      type: byte
+      title: User ctr byte 3
+    - name: ub4
+      type: byte
+      title: User ctr byte 4
+    - name: ub5
+      type: byte
+      title: User ctr byte 5
+    - name: ub6
+      type: byte
+      title: User ctr byte 6
+    - name: ub7
+      type: byte
+      title: User ctr byte 7
+    - name: ub8
+      type: byte
+      title: User ctr byte 8

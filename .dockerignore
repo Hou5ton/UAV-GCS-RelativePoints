@@ -1,0 +1,6 @@
+*
+!docker
+!tools/Makefile
+!Makefile
+!Rules.mk
+!tools/install-qt.sh

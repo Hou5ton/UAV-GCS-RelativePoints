@@ -1,0 +1,340 @@
+- name: eng
+  title: Engine
+
+  content:
+    - name: rpm
+      suffix: RPM
+      units: 1/min
+
+    - name: torque
+      suffix: torque
+      units: "Nm"
+
+    - name: temp
+      suffix: temperature
+      units: C
+
+    - name: voltage
+      suffix: ECU voltage
+      units: V
+    - name: current
+      suffix: ECU current
+      units: A
+
+    - name: ot
+      title: Oil temperature OT
+      units: C
+    - name: egt
+      title: Exhaust temperature EGT
+      units: C
+    - name: egtd
+      title: Exhaust delta temperature
+      units: C
+
+    - name: op
+      title: Oil pressure
+      units: bar
+    - name: map
+      title: Mainfold air pressure
+      units: Pa
+    - name: iap
+      title: Intake air box pressure IAP
+      units: kPa
+
+    - name: tc
+      title: Turbocharger
+      type: enum
+      units:
+        - unknown
+        - "off"
+        - active
+        - warn
+        - caution
+
+- name: gbox
+  title: Gearbox
+  content:
+    - name: rpm
+      suffix: RPM
+      units: 1/min
+
+    - name: temp
+      suffix: temperature
+      units: C
+
+    - name: clutch
+      title: Clutch status
+      type: enum
+      units:
+        - "on"
+        - "off"
+        - busy
+
+- name: prop
+  title: Prop
+  content:
+    - name: rpm
+      suffix: RPM
+      units: 1/min
+
+    - name: pitch
+      suffix: pitch position
+      units: -1..+1
+
+    - name: thrust
+      suffix: thrust
+      units: "N"
+
+- name: gen
+  title: Generator
+  content:
+    - name: rpm
+      suffix: RPM
+      units: 1/min
+    - name: voltage
+      suffix: voltage
+      units: V
+    - name: current
+      suffix: current
+      units: A
+    - name: temp
+      suffix: temperature
+      units: C
+    - name: status
+      suffix: status
+      type: enum
+      units:
+        - ok
+        - idle
+        - free
+        - error
+
+- name: fuel
+  title: Fuel
+  content:
+    - name: capacity
+      suffix: capacity
+      units: l
+    - name: rate
+      suffix: flow rate
+      units: l/h
+    - name: temp
+      suffix: temperature
+      units: C
+    - name: ps
+      suffix: pressure
+      units: bar
+
+- name: bat
+  title: Battery
+  content:
+    - name: voltage
+      suffix: voltage
+      units: V
+    - name: current
+      suffix: current
+      units: A
+    - name: capacity
+      suffix: capacity
+      units: A/h
+    - name: temp
+      suffix: temperature
+      units: C
+    - name: status
+      suffix: status
+      type: enum
+      units:
+        - ok
+        - discharging
+        - charging
+        - error
+
+- name: pwr
+  title: Power
+  content:
+    - name: status
+      suffix: status
+      type: enum
+      units:
+        - ok
+        - failsafe
+        - warning
+        - error
+
+    - name: vsys
+      title: System voltage
+      units: V
+    - name: isys
+      title: System current
+      units: A
+
+    - name: vsrv
+      title: Servo voltage
+      units: V
+    - name: isrv
+      title: Servo current
+      units: A
+
+    - name: vpld
+      title: Payload voltage
+      units: V
+    - name: ipld
+      title: Payload current
+      units: A
+
+- name: com
+  title: Datalink
+  content:
+    - name: status
+      title: Modem status
+      type: enum
+      units:
+        - ok
+        - mute
+        - busy
+        - warning
+
+    - name: rss
+      title: Received signal strength
+      units: 0..1
+    - name: snr
+      title: Signal to noise ratio
+      units: u
+    - name: temp
+      title: Modem temperature
+      units: C
+
+    - name: voltage
+      title: Modem voltage
+      units: V
+    - name: current
+      title: Modem current
+      units: A
+
+    - name: hdg
+      title: Radio heading
+      units: deg
+    - name: dme
+      title: Radio distance
+      units: m
+
+    - name: roll
+      title: Antenna roll
+      units: deg
+    - name: pitch
+      title: Antenna pitch
+      units: deg
+    - name: yaw
+      title: Antenna yaw
+      units: deg
+
+- name: status
+  title: Status sensors
+  content:
+    - name: rt
+      title: Room temperature
+      units: C
+    - name: ers
+      suffix: ERS status
+      type: enum
+      units:
+        - ok
+        - disarmed
+        - busy
+        - error
+    - name: gear
+      suffix: Landing gear
+      type: enum
+      units:
+        - down
+        - retracted
+    - name: fgear
+      suffix: Landing gear force
+      units: 0..1
+
+- name: btn
+  title: Buttons
+  type: enum
+  units:
+    - "off"
+    - "on"
+  content:
+    - name: pwron
+      title: System power on
+    - name: shutdown
+      title: System shutdown
+    - name: starter
+      title: Engine starter
+    - name: safe
+      title: Safety switch
+    - name: noers
+      title: ERS disable switch
+
+- name: srv
+  title: Servo
+  content:
+    - name: pos
+      title: Encoder position
+      units: -1..+1
+    - name: dpos
+      title: Delta position
+      units: -1..+1
+    - name: power
+      title: Power
+      units: -1..+1
+
+- name: cam
+  title: Camera sensors
+  content:
+    - name: roll
+      title: Cam roll
+      units: deg
+    - name: pitch
+      title: Cam pitch
+      units: deg
+    - name: yaw
+      title: Cam yaw
+      units: deg
+
+    - name: droll
+      title: Delta roll
+      units: deg
+    - name: dpitch
+      title: Delta pitch
+      units: deg
+    - name: dyaw
+      title: Delta yaw
+      units: deg
+
+    - name: fov
+      title: Cam field of view
+      units: deg
+
+    - name: range
+      title: Payload range
+      units: m
+
+- name: turret
+  title: Turret sensors
+  content:
+    - name: roll
+      title: Turret roll
+      units: deg
+    - name: pitch
+      title: Turret pitch
+      units: deg
+    - name: yaw
+      title: Turret yaw
+      units: deg
+
+    - name: status
+      title: Turret status
+      type: enum
+      units:
+        - ready
+        - shooting
+        - reloading
+
+    - name: capacity
+      title: Payload capacity
+      type: byte

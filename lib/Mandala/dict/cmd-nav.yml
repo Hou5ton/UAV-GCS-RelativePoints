@@ -1,0 +1,318 @@
+- name: reg
+  title: Regulators
+  content:
+    - name: roll
+      title: Cmd roll
+      units: deg
+    - name: pitch
+      title: Cmd pitch
+      units: deg
+    - name: yaw
+      title: Cmd yaw
+      units: deg
+
+    - name: course
+      title: Cmd course
+      units: deg
+    - name: altitude
+      title: Cmd altitude
+      units: m
+    - name: airspeed
+      title: Cmd airspeed
+      units: m/s
+    - name: vspeed
+      title: Cmd vspeed
+      units: m/s
+    - name: slip
+      title: Cmd slip
+      units: deg
+
+    - name: rpm
+      title: Cmd RPM
+      units: 1/m
+
+    - name: lat
+      title: Cmd latitude
+      units: deg
+    - name: lon
+      title: Cmd latitude
+      units: deg
+    - name: hmsl
+      title: Cmd altitude MSL
+      units: m
+
+    - name: "n"
+      title: Cmd position north
+      units: m
+    - name: "e"
+      title: Cmd position east
+      units: m
+
+- name: ctr
+  title: Procedures
+  content:
+    - name: mode
+      title: Flight mode
+      type: enum
+      units:
+        - EMG
+        - RPV
+        - UAV
+        - WPT
+        - HOME
+        - STBY
+        - TAXI
+        - TAKEOFF
+        - LANDING
+
+    - name: stage
+      title: Procedure stage
+      type: byte
+
+    - name: action
+      title: Procedure action
+      type: enum
+      units:
+        - idle
+        - next
+        - cancel
+        - inc
+        - dec
+
+    - name: adj
+      title: Maneuver adjust
+      units: m
+
+- name: opt
+  title: Options
+  type: enum
+  units:
+    - "off"
+    - "on"
+  content:
+    - name: thrcut
+      title: Throttle cut
+    - name: throvr
+      title: Throttle override
+    - name: ahrs
+      title: AHRS mode
+      units:
+        - gps
+        - inertial
+    - name: nomag
+      title: Magnetometer
+      units:
+        - "on"
+        - "blocked"
+    - name: hyaw
+      title: Hover yaw
+      type: enum
+      units:
+        - "compensated"
+        - "fixed"
+
+- name: rc
+  title: Realtime controls
+  content:
+    - name: ovr
+      title: RC override
+      type: enum
+      units:
+        - "off"
+        - "on"
+    - name: roll
+      title: RC roll
+      units: -1..+1
+    - name: pitch
+      title: RC pitch
+      units: -1..+1
+    - name: throttle
+      title: RC throttle
+      units: 0..1
+    - name: yaw
+      title: RC yaw
+      units: -1..+1
+
+- name: cam
+  title: Camera
+  content:
+    - name: zoom
+      title: Cam zoom level
+      units: 0..1
+    - name: focus
+      title: Cam focus
+      units: 0..1
+
+    - name: ch
+      title: Video channel
+      units: 0..255
+      type: byte
+
+    - name: range
+      title: Rangefinder
+      type: enum
+      units:
+        - "off"
+        - "on"
+
+    - name: shot
+      title: Shoting mode
+      type: enum
+      units:
+        - "off"
+        - "signle"
+        - "distance"
+        - "time"
+    - name: dshot
+      title: Shoting distance
+      type: word
+      units: m
+    - name: tshot
+      title: Shoting time
+      type: word
+      units: ms
+
+    - name: pf
+      title: Picture flip
+      type: enum
+      units:
+        - "off"
+        - "on"
+    - name: nir
+      title: NIR filter
+      type: enum
+      units:
+        - "off"
+        - "on"
+    - name: fm
+      title: Focus mode
+      type: enum
+      units:
+        - "auto"
+        - "infinity"
+    - name: ft
+      title: Focus type
+      type: enum
+      units:
+        - "auto"
+        - "manual"
+
+- name: gimbal
+  title: Gimbal
+  content:
+    - name: mode
+      title: Gimbal mode
+      type: enum
+      units:
+        - "off"
+        - "stab"
+        - "pos"
+        - "speed"
+        - "target"
+        - "fixed"
+        - "track"
+
+    - name: roll
+      suffix: cmd roll
+      units: deg
+    - name: pitch
+      suffix: cmd pitch
+      units: deg
+    - name: yaw
+      suffix: cmd yaw
+      units: deg
+
+    - name: broll
+      suffix: bias roll
+      units: deg/s
+    - name: bpitch
+      suffix: bias pitch
+      units: deg/s
+    - name: byaw
+      suffix: bias yaw
+      units: deg/s
+
+    - name: lat
+      suffix: tracking latitude
+      units: deg
+    - name: lon
+      suffix: tracking latitude
+      units: deg
+    - name: hmsl
+      suffix: tracking altitude MSL
+      units: m
+
+- name: ats
+  title: ATS commanded values
+  content:
+    - name: mode
+      title: ATS mode
+      type: enum
+      units:
+        - "off"
+        - "track"
+        - "manual"
+        - "search"
+
+    - name: roll
+      title: ATS cmd roll
+      units: deg
+    - name: pitch
+      title: ATS cmd pitch
+      units: deg
+    - name: yaw
+      title: ATS cmd yaw
+      units: deg
+
+    - name: p
+      title: ATS cmd roll rate
+      units: deg/s
+    - name: q
+      title: ATS cmd pitch rate
+      units: deg/s
+    - name: r
+      title: ATS cmd yaw rate
+      units: deg/s
+
+- name: turret
+  title: Turret commanded values
+  content:
+    - name: mode
+      title: Turret mode
+      type: enum
+      units:
+        - "off"
+        - "fixed"
+        - "stab"
+        - "position"
+        - "speed"
+
+    - name: roll
+      title: Turret cmd roll
+      units: deg
+    - name: pitch
+      title: Turret cmd pitch
+      units: deg
+    - name: yaw
+      title: Turret cmd yaw
+      units: deg
+
+    - name: p
+      title: Turret cmd roll rate
+      units: deg/s
+    - name: q
+      title: Turret cmd pitch rate
+      units: deg/s
+    - name: r
+      title: Turret cmd yaw rate
+      units: deg/s
+
+    - name: broll
+      title: Turret bias roll
+      units: deg/s
+    - name: bipitch
+      title: Turret bias pitch
+      units: deg/s
+    - name: byaw
+      title: Turret bias yaw
+      units: deg/s

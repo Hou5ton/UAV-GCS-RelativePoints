@@ -1,0 +1,191 @@
+- name: sys
+  title: System
+  content:
+    - name: health
+      suffix: health
+      type: enum
+      units:
+        - "unknown"
+        - "normal"
+        - "warning"
+        - "critical"
+    - name: time
+      suffix: time
+      type: dword
+      units: s
+    - name: uptime
+      title: Uptime
+      type: dword
+      units: ms
+
+    - name: ttl
+      title: Time to live
+      type: dword
+      units: s
+    - name: energy
+      title: Energy capacity
+      units: 0..1
+
+    - name: corr
+      title: Correlator output
+      units: K
+
+- name: status
+  title: Submodules
+  type: enum
+  units:
+    - "unknown"
+    - "ok"
+    - "error"
+  content:
+    - name: eng
+      title: Engine
+    - name: rpm
+      title: RPM sensor
+    - name: gen
+      title: Generator
+    - name: bat
+      title: Battery
+    - name: pwr
+      title: Power
+
+    - name: pt
+      title: Dynamic pressure
+    - name: ps
+      title: Static pressure
+
+    - name: gyro
+      title: IMU gyro
+
+    - name: ers
+      title: ERS
+
+    - name: uplink
+      title: Uplink
+
+- name: pld
+  title: Payload
+  content:
+    - name: ats_roll
+      title: ATS roll
+      units: deg
+    - name: ats_pitch
+      title: ATS pitch
+      units: deg
+    - name: ats_yaw
+      title: ATS yaw
+      units: deg
+
+    - name: cam_roll
+      title: Cam roll
+      units: deg
+    - name: cam_pitch
+      title: Cam pitch
+      units: deg
+    - name: cam_yaw
+      title: Cam yaw
+      units: deg
+
+    - name: turret_roll
+      title: Turret roll
+      units: deg
+    - name: turret_pitch
+      title: Turret pitch
+      units: deg
+    - name: turret_yaw
+      title: Turret yaw
+      units: deg
+
+- name: usr
+  title: User values
+  content:
+    - name: u1
+      title: User value 1
+    - name: u2
+      title: User value 2
+    - name: u3
+      title: User value 3
+    - name: u4
+      title: User value 4
+    - name: u5
+      title: User value 5
+    - name: u6
+      title: User value 6
+    - name: u7
+      title: User value 7
+    - name: u8
+      title: User value 8
+
+    - name: ub1
+      title: User byte 1
+      type: byte
+    - name: ub2
+      title: User byte 2
+      type: byte
+    - name: ub3
+      title: User byte 3
+      type: byte
+    - name: ub4
+      title: User byte 4
+      type: byte
+    - name: ub5
+      title: User byte 5
+      type: byte
+    - name: ub6
+      title: User byte 6
+      type: byte
+    - name: ub7
+      title: User byte 7
+      type: byte
+    - name: ub8
+      title: User byte 8
+      type: byte
+
+- name: haps
+  title: HAPS
+  content:
+    - name: shape
+      suffix: dihedral angle
+      units: deg
+    - name: cshape
+      suffix: cmd dihedral angle
+      units: deg
+
+    - name: roll
+      suffix: central roll
+      units: deg
+
+    - name: roll1
+      suffix: roll1
+      units: deg
+    - name: roll2
+      suffix: roll2
+      units: deg
+
+    - name: pitch1
+      suffix: pitch1
+      units: deg
+    - name: pitch2
+      suffix: pitch2
+      units: deg
+
+    - name: cpitch1
+      suffix: cmd pitch1
+      units: deg
+    - name: cpitch2
+      suffix: cmd pitch2
+      units: deg
+
+    - name: spd1
+      suffix: airspeed1
+      units: m/s
+    - name: spd2
+      suffix: airspeed2
+      units: m/s
+
+    - name: ail1
+      suffix: aileron1
+      units: -1..+1
+    - name: ail2
+      suffix: aileron2
+      units: -1..+1

@@ -1,0 +1,303 @@
+- name: gyro
+  title: Gyro
+  units: deg/s
+  content:
+    - name: "x"
+      suffix: "X"
+    - name: "y"
+      suffix: "Y"
+    - name: "z"
+      suffix: "Z"
+    - name: temp
+      suffix: temperature
+      units: C
+
+- name: acc
+  title: Accelerometer
+  units: m/s2
+  content:
+    - name: "x"
+      suffix: "X"
+    - name: "y"
+      suffix: "Y"
+    - name: "z"
+      suffix: "Z"
+    - name: temp
+      suffix: temperature
+      units: C
+
+- name: mag
+  title: Magnetometer
+  units: a.u.
+  content:
+    - name: "x"
+      suffix: "X"
+    - name: "y"
+      suffix: "Y"
+    - name: "z"
+      suffix: "Z"
+    - name: temp
+      suffix: temperature
+      units: C
+
+- name: gps
+  title: GPS
+  content:
+    - name: lat
+      suffix: latitude
+      units: deg
+    - name: lon
+      suffix: longitude
+      units: deg
+    - name: hmsl
+      suffix: altitude
+      units: m
+
+    - name: vn
+      suffix: Velocity north
+      units: m/s
+    - name: ve
+      suffix: Velocity east
+      units: m/s
+    - name: vd
+      suffix: Velocity down
+      units: m/s
+
+    - name: time
+      title: UTC Time from 1970 1st Jan
+      units: s
+      type: dword
+    - name: temp
+      suffix: temperature
+      units: C
+
+    - name: status
+      suffix: status
+      type: enum
+      units:
+        - ok
+        - disabled
+        - busy
+        - warning
+        - spoofing
+        - critical
+
+    - name: sv
+      suffix: visible satellites
+      type: word
+    - name: su
+      suffix: used satellites
+      type: word
+
+    - name: jam
+      suffix: jamming level
+      units: 0..1
+
+- name: pt
+  title: Dynamic pressure
+  content:
+    - name: airspeed
+      title: Airspeed
+      units: m/s
+    - name: airspeed_d
+      title: Airspeed derivative
+      units: m/s2
+    - name: temp
+      title: Pitot probe temperature
+      units: C
+    - name: raw
+      title: Dynamic pressure
+      units: kPa
+
+- name: ps
+  title: Static pressure
+  content:
+    - name: altitude
+      title: Barometric altitude
+      units: m
+    - name: altitude_d
+      title: Barometric altitude derivative
+      units: m/s
+    - name: temp
+      title: Altitude probe temperature
+      units: C
+    - name: raw
+      title: Static pressure
+      units: kPa
+
+- name: air
+  title: Aerodynamic sensors
+  content:
+    - name: slip
+      title: Slip
+      units: deg
+    - name: aoa
+      title: Angle of attack
+      units: deg
+    - name: temp
+      title: Ambient air temperature
+      units: C
+    - name: buo
+      title: Blimp ballonet pressure
+      units: kPa
+
+- name: agl
+  title: Altitude above ground sensors
+  units: m
+  content:
+    - name: sonic
+      title: Ultrasonic AGL altitude
+    - name: laser
+      title: Laser AGL altitude
+    - name: radio
+      title: Radio AGL altitude
+    - name: ground
+      title: Ground
+      type: enum
+      units:
+        - "off"
+        - detected
+
+- name: rtk
+  title: RTK
+  content:
+    - name: roll
+      suffix: Roll
+      units: deg
+    - name: pitch
+      suffix: Pitch
+      units: deg
+    - name: yaw
+      suffix: Yaw
+      units: deg
+
+- name: las
+  title: Landing Assistance sensors
+  descr: Used for approach correction.
+  content:
+    - name: dx
+      title: Relative distance X
+      units: m
+    - name: dy
+      title: Relative distance Y
+      units: m
+    - name: dz
+      title: Relative distance Z
+      units: m
+
+    - name: vx
+      title: Relative velocity X
+      units: m/s
+    - name: vy
+      title: Relative velocity Y
+      units: m/s
+    - name: vz
+      title: Relative velocity Z
+      units: m/s
+
+    - name: status
+      title: LAS status
+      type: enum
+      units:
+        - ok
+        - holdon
+        - cancel
+
+- name: pfm
+  title: Platform
+  descr: Used for landing to a moving platform with las.
+  content:
+    - name: lat
+      suffix: latitude
+      units: deg
+    - name: lon
+      suffix: longitude
+      units: deg
+    - name: hmsl
+      suffix: altitude MSL
+      units: m
+
+    - name: vn
+      suffix: velocity north
+      units: m/s
+    - name: ve
+      suffix: velocity east
+      units: m/s
+    - name: vd
+      suffix: velocity down
+      units: m/s
+
+    - name: roll
+      suffix: roll
+      units: deg
+    - name: pitch
+      suffix: pitch
+      units: deg
+    - name: yaw
+      suffix: yaw
+      units: deg
+
+- name: vps
+  title: Visual navigation
+  descr: Used for global position estimation and dead-reckoning.
+  content:
+    - name: vx
+      title: Visual velocity X
+      units: m/s
+    - name: vy
+      title: Visual velocity Y
+      units: m/s
+    - name: vz
+      title: Visual velocity Z
+      units: m/s
+
+    - name: dx
+      title: Visual delta X
+      units: m
+    - name: dy
+      title: Visual delta Y
+      units: m
+    - name: dz
+      title: Visual delta Z
+      units: m
+
+    - name: roll
+      title: Visual roll
+      units: deg
+    - name: pitch
+      title: Visual pitch
+      units: deg
+    - name: yaw
+      title: Visual yaw
+      units: deg
+
+    - name: lat
+      title: Visual latitude
+      units: deg
+    - name: lon
+      title: Visual longitude
+      units: deg
+
+    - name: hmsl
+      title: Visual altitude MSL
+      units: m
+
+    - name: altitude
+      title: Visual altitude
+      units: m
+
+- name: tcas
+  title: Collision avoidance
+  content:
+    - name: dist
+      title: Distance to target
+      units: m
+    - name: hdg
+      title: Heading to target
+      units: deg
+    - name: elv
+      title: Elevation to target
+      units: deg
+    - name: vel
+      title: Velocity
+      units: m/s
